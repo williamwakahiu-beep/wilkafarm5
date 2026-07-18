@@ -8,9 +8,19 @@ body {
   background: #2e7d32;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 12px 10px; /* reduced from 20px */
   position: sticky;
   top: 0;
+}
+
+.sticky-header h1 {
+  font-size: 20px; /* reduced */
+  margin: 0 0 4px 0;
+}
+
+.sticky-header p {
+  font-size: 13px; /* reduced */
+  margin: 0;
 }
 
 h1, h2 {
