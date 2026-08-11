@@ -23,9 +23,12 @@
 </header>
 
 <div class="container">
- <img src="oranges.jpg" alt="Grafted Washington Navel and Valencia orange seedlings for sale in Kenya KSh 350 Wilkafarm" class="product-img">
+ <!-- IF IMAGE DOESN'T SHOW, CHANGE THIS TO avocado.jpg FOR TEST -->
+ <img src="orange.jpg" alt="Grafted Washington Navel and Valencia orange seedlings for sale in Kenya KSh 350 Wilkafarm" class="product-img">
+
   <h2 style="color:#ff8c00; margin-top:15px; text-align:center;">Grafted Orange Seedlings for Sale in Kenya - KSh 350</h2>
   <p style="text-align:center;">Healthy grafted Washington Navel & Valencia orange seedlings. Sweet, juicy, high yielding. Nursery in Sagana. We deliver countrywide.</p>
+  
  <a href="https://wa.me/254710279318?text=Hello%20Wilkafarm%2C%20I%20want%20Orange%20seedlings" class="whatsapp-btn">Order on WhatsApp 0710 279 318</a>
 
   <div class="card" id="types">
@@ -36,7 +39,7 @@
 
   <div class="tip-card" style="background:#fff7e6; border-left: 4px solid #25D366;">
     <h3>🚚 Delivery & Payment</h3>
-    <p><b>We deliver:</b> Orange seedlings to Nairobi, Eldoret, Nakuru, Kisumu, Mombasa and all 47 counties in Kenya + We also do Exports<br><b>Delivery Cost:</b> Depends on quantity and location<br><b>Payment:</b> Full payment before delivery via M-Pesa Till.</p>
+    <p><b>We deliver:</b> Orange seedlings to Nairobi, Eldoret, Nakuru, Kisumu, Mombasa and all 47 counties in Kenya + We also do Exports<br><b>How:</b> Via G4S, Fargo, Bus Parcel<br><b>Delivery Cost:</b> Depends on quantity and location<br><b>Payment:</b> Full payment before delivery via M-Pesa Till.</p>
   </div>
 
   <h2 style="margin-top:40px; color:#ff8c00;">Complete Orange Farming Guide</h2>
@@ -57,6 +60,52 @@
   </div>
   <footer style="text-align:center; margin-top:40px; color:#666;"><p>Wilkafarm Fruit Seedlings | Sagana, Kenya | Call 0710 279 318</p></footer>
 </div>
-<!-- PASTE SAME SHAMBA CHATBOX CODE HERE -->
+
+<!-- FULL SHAMBA DOCTOR CHATBOX -->
+<style>
+#shamba-chat {position: fixed; bottom: 20px; right: 20px; width: 330px; max-width: 90%; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); font-family: Arial, sans-serif; z-index: 9999; display: flex; flex-direction: column;}
+#shamba-header {background: #ff8c00; color: white; padding: 12px 15px; border-radius: 16px 16px 0 0; font-weight: bold; display: flex; justify-content: space-between; align-items: center; font-size: 15px;}
+#shamba-close {background: none; border: none; color: white; font-size: 22px; cursor: pointer; line-height: 1;}
+#shamba-body {display: flex; flex-direction: column;}
+#shamba-messages {height: 320px; overflow-y: auto; padding: 12px; background: #f8f9fa; font-size: 14px;}
+.shamba-msg {margin: 8px 0; padding: 10px 12px; border-radius: 12px; max-width: 85%; line-height: 1.4;}
+.user-msg {background: #ff8c00; color: white; margin-left: auto;}
+.bot-msg {background: #fff7e6; color: #333;}
+.bot-footer {font-size: 11px; color: #666; text-align: center; padding: 5px; border-top: 1px solid #ddd;}
+#shamba-input {display: flex; border-top: 1px solid #ddd;}
+#shamba-input input {flex: 1; border: none; padding: 12px; border-radius: 0 0 0 16px; outline: none; font-size: 14px;}
+#shamba-input button {background: #ff8c00; color: white; border: none; padding: 12px 18px; border-radius: 0 0 16px 0; cursor: pointer; font-weight: bold;}
+#shamba-bubble {position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: #ff8c00; border-radius: 50%; display: none; justify-content: center; align-items: center; color: white; font-size: 28px; cursor: pointer; box-shadow: 0 4px 15px rgba(255,140,0,0.4); z-index: 9999;}
+@media(max-width: 480px){#shamba-chat {width: 90%; right: 5%;}}
+</style>
+
+<div id="shamba-chat">
+  <div id="shamba-header"><span>🌱 Ask Shamba Doctor AI</span><button id="shamba-close" onclick="toggleChat()">×</button></div>
+  <div id="shamba-body">
+    <div id="shamba-messages"><div class="shamba-msg bot-msg">Habari! I'm Shamba Doctor 🤠 Ask me about planting, pests, fertilizer, or prices. I’m here to help you grow!</div></div>
+    <div class="bot-footer">Powered by Wilkafarm | 0710 279 318</div>
+    <div id="shamba-input"><input type="text" id="shamba-question" placeholder="Ask about farming..."><button onclick="askShamba()">Send</button></div>
+  </div>
+</div>
+<div id="shamba-bubble" onclick="toggleChat()">💬</div>
+
+<script>
+function toggleChat() {
+  const chat = document.getElementById('shamba-chat');
+  const bubble = document.getElementById('shamba-bubble');
+  if(chat.style.display === 'none') {chat.style.display = 'flex';bubble.style.display = 'none';} else {chat.style.display = 'none';bubble.style.display = 'flex';}
+}
+function askShamba() {
+  const input = document.getElementById('shamba-question');const messages = document.getElementById('shamba-messages');const q = input.value.trim().toLowerCase();if(!q) return;
+  messages.innerHTML += `<div class="shamba-msg user-msg">${input.value}</div>`;input.value = '';
+  let answer = "Good question! For specific advice + photos, WhatsApp me directly on 0710 279 318. I respond fast 🌿";
+  if(q.includes('plant')) answer = "Planting oranges: Dig hole 2ft x 2ft, mix topsoil + manure. Spacing 6m x 6m. Plant at start of rains.";
+  else if(q.includes('price')) answer = "Current prices: Banana 150, Mango 300, Orange 350, Soursop 300, Macadamia 400, Avocado 250. We deliver countrywide!";
+  else if(q.includes('delivery')) answer = "We deliver all over Kenya + Export. Cost depends on quantity and location. Payment before delivery via M-Pesa.";
+  setTimeout(() => {messages.innerHTML += `<div class="shamba-msg bot-msg">${answer}</div>`;messages.scrollTop = messages.scrollHeight;}, 600);
+  messages.scrollTop = messages.scrollHeight;
+}
+document.getElementById('shamba-question').addEventListener('keypress', function(e) {if(e.key === 'Enter') askShamba();});
+</script>
 </body>
 </html>
